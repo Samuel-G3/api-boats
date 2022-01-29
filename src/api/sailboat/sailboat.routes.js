@@ -1,7 +1,7 @@
 const SailboatRoutes = require('express').Router()
  
  
-const {   getAllSailboats, getSailboat, } = require('./sailboat.controller')
+const { getAllSailboats, getSailboat } = require('./sailboat.controller')
 
 
 SailboatRoutes.get('/', getAllSailboats)

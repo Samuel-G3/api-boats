@@ -4,7 +4,9 @@
   "description": "Node API api-yachts",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js" 
+    "start": "node index.js", 
+    "seed": "node src/utils/seeds/boats.seed"
+   
 
      
   },

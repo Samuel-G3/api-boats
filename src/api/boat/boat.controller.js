@@ -16,7 +16,7 @@ const getAllBoats = async (req, res, next) => {
 const getBoat = async (req, res, next) => {
     try {
         const { id } = req.params
-        const boatDB = await Boat.findById(id) 
+        const boatDB = await Boat.find({id}) 
         if (!boatDB) {
             return next(setError(404, 'Boats not found'))
         }

@@ -13,19 +13,30 @@ const getAllSailboats = async (req, res, next) => {
         return next(setError(500, 'sailboat failed server'))
     }
 }
-
 const getSailboat = async (req, res, next) => {
     try {
         const { id } = req.params
-        const sailboatDB = await Sailboat.findById(id)
-        if (!sailboatDB) {
-            return next(setError(404, 'sailboat not found'))
+        const sailboatsDB = await Sailboat.find({id}) 
+        if (!sailboatsDB) {
+            return next(setError(404, 'sail not found'))
         }
-        return res.status(200).json(sailboatDB)
+        return res.status(200).json(sailboatsDB)
     } catch (error) {
-        return next(setError(500, 'sailboat server error'))
+        return next(setError(500, 'sail server error'))
     }
 }
+// const getSailboat = async (req, res, next) => {
+//     try {
+//         const { id } = req.params
+//         const sailboatDB = await Sailboat.find({id}) 
+//         if (!sailboatDB) {
+//             return next(setError(404, 'sailboat not found'))
+//         }
+//         return res.status(200).json(sailboatDB)
+//     } catch (error) {
+//         return next(setError(500, 'sailboat server error'))
+//     }
+// }
  
 module.exports = {
    
