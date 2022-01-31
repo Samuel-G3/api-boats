@@ -20,7 +20,7 @@ const getSailboat = async (req, res, next) => {
         if (!sailboatsDB) {
             return next(setError(404, 'sail not found'))
         }
-        return res.status(200).json(sailboatsDB)
+        return res.status(200).json(sailboatsDB[0])
     } catch (error) {
         return next(setError(500, 'sail server error'))
     }
