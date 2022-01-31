@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:4200", "https://api-boats-samuel-g3.vercel.app/"],
+    origin: ["http://localhost:3000", "http://localhost:4200", "https://api-boats-samuel-g3.vercel.app/", "https://app-angular-yachts.vercel.app/home" ],
     credentials: true,
   })
 );
